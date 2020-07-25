@@ -1,6 +1,6 @@
   <div class="card card-default">
     <div class="card-header bg-info">
-      <h1><b>Grievance Registration Form</b></h1>
+      <h1><b>leave Registration Form</b></h1>
 
     </div>
     <!-- /.card-header -->
@@ -68,19 +68,19 @@
              <div class="form-group">
               <label> Select the category</label>
               <select class="custom-select" (blur)="validateTopic(topic.value)" (change)="validateTopic(topic.value)" #topic="ngModel" [class.is-invalid]="topicHasError && topic.touched" name="topic" [(ngModel)]="userModel.topic">
-                <option value="default">My complaint is about</option>
+                <option value="default">reason of leave</option>
                 <option *ngFor="let topic of topics">{{ topic }}</option>
               </select>
               <small class="text-danger" [class.d-none]="!topicHasError || topic.untouched">Please choose a topic</small>
             </div><br>
 
             <div class="form-group">
-                    <label> Relevant Law-section for the complaint</label>
+                    <label> Relevant terms and conditions</label>
                     <input type="text" #department="ngModel"  required class="form-control"  [(ngModel)]="userModel.department" >
                   </div>
 
              <div class="form-group">
-              <label  > Complaint details</label>
+              <label  > leave details</label>
               <textarea cols="30" name='details'  #details="ngModel" required class="form-control" [class.is-invalid]="details.invalid && details.touched"  [(ngModel)]="userModel.details" style="height: 159px;"></textarea>
               <small class="text-danger" [class.d-none]="details.valid || details.untouched">This is required</small>
 
